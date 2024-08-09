@@ -21,8 +21,8 @@ jobs:
           command: mvn clean package
 
       - run:
-          name: List target directory contents
-          command: ls -la target
+          name: List all files in target directory
+          command: find target
 
       - store_artifacts:
           path: target/java-hello-world/java-hello-world.war
