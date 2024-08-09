@@ -25,7 +25,7 @@ jobs:
           command: find target
 
       - store_artifacts:
-          path: target/java-hello-world/java-hello-world.war
+          path: target/java-hello-world.war
           destination: war-file
 
       - run:
