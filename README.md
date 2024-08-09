@@ -1,2 +1,4 @@
-# SampleWebApp
-A Sample Web Application with Snoop Servlet for Tomcat, Weblogic, Jboss, Websphere
+java-hello-world-webapp
+=======================
+
+A simple java web app
