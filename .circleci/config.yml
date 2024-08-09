@@ -1,0 +1,27 @@
+version: 2.1
+
+executors:
+  maven:
+    docker:
+      - image: circleci/openjdk:11-jdk
+    working_directory: ~/main
+
+jobs:
+  build:
+    executor: maven
+    steps:
+      - checkout
+
+      - run:
+          name: Download and cache dependencies
+          command: mvn dependency:go-offline
+
+      - run:
+          name: Build WAR
+          command: mvn clean package
+
+workflows:
+  version: 2
+  build_war:
+    jobs:
+      - build
