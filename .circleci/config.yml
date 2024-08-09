@@ -20,6 +20,10 @@ jobs:
           name: Build WAR
           command: mvn clean package
 
+      - store_artifacts:
+          path: target/*.war
+          destination: war-file
+
       - run:
           name: Creating Dummy Artifacts
           working_directory: /tmp
