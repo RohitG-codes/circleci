@@ -25,7 +25,7 @@ jobs:
           command: ls -la target
 
       - store_artifacts:
-          path: target/*.war
+          path: target/java-hello-world/java-hello-world.war
           destination: war-file
 
       - run:
