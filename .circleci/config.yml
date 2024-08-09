@@ -20,6 +20,10 @@ jobs:
           name: Build WAR
           command: mvn clean package
 
+      - run:
+          name: List target directory contents
+          command: ls -la target
+
       - store_artifacts:
           path: target/*.war
           destination: war-file
