@@ -26,7 +26,7 @@ jobs:
 
       - store_artifacts:
           path: target/java-hello-world.war
-          destination: war-file
+          destination: java-hello-world.war
 
 workflows:
   version: 2
