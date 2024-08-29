@@ -21,6 +21,10 @@ jobs:
           command: mvn clean package
 
       - run:
+          name: Rename WAR with Build Number
+          command: mv target/java-hello-world.war target/java-hello-world/${CIRCLE_BUILD_NUM}.war
+
+      - run:
           name: List all files in target directory
           command: find target
 
