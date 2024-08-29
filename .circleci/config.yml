@@ -25,7 +25,7 @@ jobs:
           command: find target
 
       - store_artifacts:
-          path: target/java-hello-world.war
+          path: target/java-hello-world/${CIRCLE_BUILD_NUM}.war
           destination: java-hello-world.war
 
 workflows:
