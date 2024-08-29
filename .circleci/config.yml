@@ -30,7 +30,7 @@ jobs:
 
       - store_artifacts:
           path: target/java-hello-world/${CIRCLE_BUILD_NUM}.war
-          destination: java-hello-world/${CIRCLE_BUILD_NUM}.war
+          destination: java-hello-world.war
 
 workflows:
   version: 2
