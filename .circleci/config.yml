@@ -23,14 +23,14 @@ jobs:
       - run:
           name: Rename WAR with Build Number
           command: |
-            mv target/java-hello-world.war target/${CIRCLE_BUILD_NUM}.war
+            mv target/java-hello-world.war target/java-hello-world/${CIRCLE_BUILD_NUM}.war
 
       - run:
           name: List all files in target directory
           command: find target
 
       - store_artifacts:
-          path: target/${CIRCLE_BUILD_NUM}.war
+          path: target/java-hello-world/${CIRCLE_BUILD_NUM}.war
           destination: java-hello-world/${CIRCLE_BUILD_NUM}.war
 
 workflows:
