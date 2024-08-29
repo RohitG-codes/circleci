@@ -23,20 +23,15 @@ jobs:
       - run:
           name: Rename WAR with Build Number
           command: |
-            if [ -f target/java-hello-world.war ]; then
-              mv target/java-hello-world.war target/java-hello-world-${CIRCLE_BUILD_NUM}.war;
-            else
-              echo "WAR file not found!";
-              exit 1;
-            fi
+            mv target/java-hello-world.war target/${CIRCLE_BUILD_NUM}.war
 
       - run:
           name: List all files in target directory
           command: find target
 
       - store_artifacts:
-          path: target/java-hello-world-${CIRCLE_BUILD_NUM}.war
-          destination: war-file
+          path: target/${CIRCLE_BUILD_NUM}.war
+          destination: java-hello-world/${CIRCLE_BUILD_NUM}.war
 
 workflows:
   version: 2
