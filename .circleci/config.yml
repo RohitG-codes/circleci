@@ -24,11 +24,11 @@ jobs:
           name: Rename WAR with Build Number
           command: |
             if [ -f target/java-hello-world.war ]; then
-              mv target/java-hello-world.war target/${CIRCLE_BUILD_NUM}.war;
-              echo "WAR file renamed to ${CIRCLE_BUILD_NUM}.war";
+              mv target/java-hello-world.war target/${CIRCLE_BUILD_NUM}.war
+              echo "WAR file renamed to ${CIRCLE_BUILD_NUM}.war"
             else
-              echo "WAR file not found!";
-              exit 1;
+              echo "WAR file not found!"
+              exit 1
             fi
 
       - run:
@@ -37,7 +37,7 @@ jobs:
 
       - run:
           name: Print artifact path
-          command: echo "Artifact path: target/${CIRCLE_BUILD_NUM}.war"
+          command: echo 'Artifact path: target/${CIRCLE_BUILD_NUM}.war'
 
       - store_artifacts:
           path: target/${CIRCLE_BUILD_NUM}.war
