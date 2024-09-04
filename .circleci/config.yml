@@ -1,35 +1,35 @@
 version: 2.1
 
 executors:
-  gradle:
+  maven:
     docker:
       - image: circleci/openjdk:11-jdk
     working_directory: ~/main
 
 jobs:
   build:
-    executor: gradle
+    executor: maven
     steps:
       - checkout
 
       - run:
           name: Download and cache dependencies
-          command: ./gradlew build --no-daemon
+          command: mvn dependency:go-offline
 
       - run:
-          name: Build JAR
-          command: ./gradlew build --no-daemon
+          name: Build WAR
+          command: mvn clean package
 
       - run:
-          name: List all files in build directory
-          command: find build
+          name: List all files in target directory
+          command: find target
 
       - store_artifacts:
-          path: build/libs/java-hello-world.jar
-          destination: java-hello-world.jar
+          path: target/java-hello-world.war
+          destination: java-hello-world.war
 
 workflows:
   version: 2
-  build_jar:
+  build_war:
     jobs:
       - build
