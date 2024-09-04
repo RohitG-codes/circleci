@@ -25,8 +25,8 @@ jobs:
           command: find target
 
       - store_artifacts:
-          path: target/java-hello-world.war
-          destination: java-hello-world.war
+          path: target/maven.war
+          destination: maven.war
 
 workflows:
   version: 2
