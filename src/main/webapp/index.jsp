@@ -27,6 +27,6 @@
     </style>
 </head>
 <body>
-    <h2>CI/CD Using CircleCI</h2>
+    <h2>CI/CD Using CircleCI of a Maven Project</h2>
 </body>
 </html>
